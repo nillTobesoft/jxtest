@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: nillTobesoft
+    provider: github
+    repository: gohttp
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: nilltobesoft-gohttp
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/nillTobesoft/gohttp.git
+  org: nillTobesoft
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: gohttp
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/nillTobesoft/gohttp

@@ -7,7 +7,9 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        nillTobesoft/gohttp: true
         nillTobesoft/jxtest: true
+        nillTobesoft/testhttp: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -19,7 +21,9 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        nillTobesoft/gohttp: merge
         nillTobesoft/jxtest: merge
+        nillTobesoft/testhttp: merge
       queries:
       - labels:
         - approved
@@ -31,6 +35,8 @@ data:
         - needs-rebase
         repos:
         - nillTobesoft/jxtest
+        - nillTobesoft/gohttp
+        - nillTobesoft/testhttp
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +47,8 @@ data:
         - needs-rebase
         repos:
         - nillTobesoft/jxtest
+        - nillTobesoft/gohttp
+        - nillTobesoft/testhttp
       target_url: http://lighthouse-jx.192.168.59.100.nip.io/merge/status
 kind: ConfigMap
 metadata:
