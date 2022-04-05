@@ -6,6 +6,14 @@ data:
       repos:
       - nillTobesoft/jxtest
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - nillTobesoft/gohttp
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - nillTobesoft/testhttp
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,7 +24,17 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      nillTobesoft/gohttp:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       nillTobesoft/jxtest:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      nillTobesoft/testhttp:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
@@ -26,8 +44,40 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      nillTobesoft/gohttp:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       nillTobesoft/jxtest:
       - config-updater
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      nillTobesoft/testhttp:
       - approve
       - assign
       - blunderbuss
@@ -55,6 +105,14 @@ data:
     - repos:
       - nillTobesoft/jxtest
       trusted_org: todo
+    - repos:
+      - nillTobesoft/gohttp
+      trusted_org: todo
+    - repos:
+      - nillTobesoft/testhttp
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
