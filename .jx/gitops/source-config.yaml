@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: gohttp
+    - name: jxtest
     - name: testhttp
     scheduler: in-repo
   slack:
